@@ -1,8 +1,5 @@
 # Dice-Game
-Project for CPSC 386 : Game Design
-
-
-# Dice Game 
+## Project for CPSC 386 : Game Design
 ### Due Mar 23 by 11:59pm Points 10
 ### Introduction
 ###
