@@ -42,3 +42,5 @@ The computer player does not need to be a sophisticated machine. You may make th
 The game should take advantage of object oriented design. To the best of your ability, attempt to model elements of the game as objects. Some elements of the game that can naturally map onto an object are the die, the player, and the computer player.
 
 Since this game is a terminal based game, use sleep (Links to an external site.) to slow down the game to make the text appear on the screen slowly. Give the player an opportunity to read the text. Students are encouraged to use curses in lieu of graphics.
+
+![](dicegamerubric.JPG)
