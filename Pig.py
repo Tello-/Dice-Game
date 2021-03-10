@@ -28,19 +28,19 @@ class TurnData:
 class Turn:
     def __init__(self, playerNumber):
         print("Turn created for player %d" %playerNumber)
-        self.playerNumber = playerNumber
-        self.totalTurnRolls = 0
-        self.rollSum = 0
-        self.currentRollVal = 0
-        self.firstRoll = True
-        self.die = Dice()
+        self.playerNumber = playerNumber                        # Who's turn
+        self.totalTurnRolls = 0                                 # How many rolls this turn
+        self.rollSum = 0                                        # Turn point sum
+        self.currentRollVal = 0                                 # Most recent roll
+        self.firstRoll = True                                   # Flags first roll
+        self.die = Dice()                                       # Die used for turn
 
 
     def turnPrompt(self):
         print("Player %d, it is your turn!" %self.playerNumber)
         
 
-    def addRoll(self, val:int):
+    def recordRoll(self, val:int):
         self.totalTurnRolls += 1
         self.currentRollVal = val
         self.rollSum += self.currentRollVal
@@ -52,27 +52,15 @@ class Game:
         self.numBotPlayers = botPlayers
         self.scoreGoal = scoreGoal
         self.currentTurn = Turn(1)
-        self.humanPlayers = list(())
+        self.players = list(())
 
-        for x in range(self.numHumanPlayers):
-            self.humanPlayers.append(Player(x+1))
+        for x in range(0,self.numHumanPlayers):
+            self.players.append(Player(x+1))
+
+        for x in range(self.numHumanPlayers, self.numHumanPlayers + self.numBotPlayers):
+            self.players.append(Player(x+1, True))
 
 
-    def printStats(self, playerNumber:int):    
-        if playerNumber>0 and playerNumber<(self.numHumanPlayers + self.numBotPlayers)
-            print("-----------------------------")
-            print("Player # %d" %.number)
-            print("Career Rolls: %d" %y.numGameRolls)
-            print("Score: %d" %y.score)
-            print("-----------------------------")
-
-    def printStats(self):    
-        for y in self.humanPlayers:
-            print("-----------------------------")
-            print("Player # %d" %y.number)
-            print("Career Rolls: %d" %y.numGameRolls)
-            print("Score: %d" %y.score)
-            print("-----------------------------")
 
     def run(self):
         while(True):
